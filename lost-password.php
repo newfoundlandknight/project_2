@@ -1,7 +1,7 @@
 <?php
 require 'header.php';?>
     
-    lost password
+    lost passwords
     Click here to <a href="logout.php">Logout</a><br><br>
    
             

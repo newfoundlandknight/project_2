@@ -1,7 +1,7 @@
 <?php
 require 'header.php';?>
     
-    new accounts
+    new accountsa
     Click here to <a href="logout.php">Logout</a><br><br>
    
             

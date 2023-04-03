@@ -1,0 +1,56 @@
+<?php
+session_start();
+
+if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
+    header("location: dashboard.php");
+    exit;
+}
+
+$username = "";
+$password = "";
+
+if (isset($_POST['username']) && isset($_POST['password'])) {
+    if (!empty($_POST['username']) && !empty($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+    }
+}
+
+// Verify credentials
+if ($username != "" && $password != "") {
+    if ($username == "jack" && $password == "jack13") {
+
+        session_start();
+        $_SESSION["loggedin"] = true;
+        $_SESSION['username'] = $username;
+        header("location: dashboard.php");
+    } else {
+        echo "<h1>Oops! Something went wrong. Please try again</h1>";
+    }
+}
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Project 2 IT SUPPORT</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+<div>Do you have an account</div>
+<div>New Account form</div>
+
+<select name="Title">
+	<option value="Mr." selected>Mr.</option>
+	<option value="Mrs.">Mrs.</option>
+    <option value="Miss">Miss</option>
+    <option value="Master">Master</option>
+    <option value="Dr.">Dr.</option>
+    <option value="Prof.">Prof.</option>
+    <option value="other">other</option>
+</select>
+
+    </body>

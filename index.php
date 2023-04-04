@@ -1,8 +1,8 @@
 <?php
 session_start();
-
+//do we have a session? If so jump to dashboard
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-    header("location: dashboard.php");
+    header("location: problem.php");
     exit;
 }
 
@@ -12,7 +12,7 @@ $lastName = "";
 $role = "";
 $emailType="";
 
-if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['role']) ) {
+if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['role'])  ) {
     if (!empty($_POST['title']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['role'])
     
     ) {
@@ -20,7 +20,7 @@ if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastNa
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
         $role = $_POST['role'];
-       
+       if (isset($_POST['emailtype'])){ $emailType = $_POST['emailType'];}
     }
 }
 
@@ -28,7 +28,7 @@ if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastNa
 if ($firstName != "" && $role != "") {
     // if ($username == "jack" && $password == "jack13") {
         if (1==1) {
-
+//big time cheat here!!!!!!!!!
         session_start();
         $_SESSION["loggedin"] = true;
         $_SESSION['title'] = $title;
@@ -37,15 +37,15 @@ if ($firstName != "" && $role != "") {
         $_SESSION['role'] = $role;
         // if ($_SESSION['role'] ="ceo") {exit;}
         if ($_SESSION['role'] =="admin") {$_SESSION['emailType'] ="newAccount";
-            header("location: new-account.php");
+            header("location: problem.php");
         }
 
         if ($_SESSION['role'] =="manager") {$_SESSION['emailType'] ="lostPassword";
-            header("location: lost-password.php");
+            header("location: problem.php");
         }
 
         if ($_SESSION['role'] =="ceo") {$_SESSION['emailType'] ="Needs help";
-            header("location: need-help.php");
+            header("location: problem.php");
         }
 
         
@@ -66,53 +66,37 @@ if ($firstName != "" && $role != "") {
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
 <body>
-<?php echo $role;?>
+<?php include 'menu-bar.php';?>
 
-    <div id ="main">
-        <h3 >IT SUPPORT login</h3>
-            <div id ="form">
-                <div>
-                    <a href="dashboard.php">HOME</a>
-                </div>
-            <form method="post" action="index.php">
-                <select name="title">
-                    <option value="Mr." selected>Mr.</option>    
-                    <option value="Mrs.">Mrs.</option>
-                    <option value="Miss">Miss</option>
-                    <option value="Master">Master</option>
-                    <option value="Dr.">Dr.</option>
-                    <option value="Prof.">Prof.</option>
-                    <option value="other">other</option>
-                </select>
-                <input type="text" name="firstName" placeholder="First Name" value ="tuna" required>
-                <input type="text" name="lastName" placeholder="Last Name" value=2 required>
+    <div id ="main" class="form_100">
+        
+            <div class ="form">
+             <h3 >IT SUPPORT login</h3>
+                <form method="post" action="index.php">
+                    <select name="title">
+                        <option value="Mr." selected>Mr.</option>    
+                        <option value="Mrs.">Mrs.</option>
+                        <option value="Miss">Miss</option>
+                        <option value="Master">Master</option>
+                        <option value="Dr.">Dr.</option>
+                        <option value="Prof.">Prof.</option>
+                        <option value="other">other</option>
+                    </select>
 
-                <select name="role" required>
-                    <option value="admin" selected>Admin</option>    
-                    <option value="manager">manager</option>
-                    <option value="ceo">CEO</option>
-             
-                </select>
-<!-- 
-                <input type="text" name="role" placeholder="Role" value ="admin" required> -->
-                <button type="submit" name="login">Login</button>
+                    <input type="text" name="firstName" placeholder="First Name" value ="tuna" required>
+                    <input type="text" name="lastName" placeholder="Last Name" value=2 required>
+
+                    <select name="role" required>
+                        <option value="admin" selected>Admin</option>    
+                        <option value="manager">manager</option>
+                        <option value="ceo">CEO</option>
+                    </select>
+                    <!-- <input type="text" name="role" placeholder="Role" value ="admin" required> -->
+                    <button type="submit" name="login">Login</button>
                 </form>
-
-
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
     </div>
-
-
-</body>
+    <?php
+require 'footer.php';
+?>
+</body></html>

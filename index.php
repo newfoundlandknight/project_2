@@ -1,21 +1,31 @@
 <?php
-session_start();
-//do we have a session? If so jump to dashboard
+// session_start();
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
+// echo '<pre>';
+// var_dump($_POST);
+// echo '</pre>';
+//do we have a session? If so jump to problem.php
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: problem.php");
     exit;
 }
-
+// if no session than create one
+// blank all the variables
 $title = "";
 $firstName = "";
 $lastName = "";
 $role = "";
 $emailType="";
 
+// now we check to this if a form has posted data
 if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['role'])  ) {
     if (!empty($_POST['title']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['role'])
     
-    ) {
+    ) 
+    // now we set the variables from the post
+    {
         $title = $_POST["title"];        
         $firstName = $_POST['firstName'];
         $lastName = $_POST['lastName'];
@@ -24,7 +34,7 @@ if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastNa
     }
 }
 
-// Verify credentials
+// Verify credentials DISABLED FOR THIS PROJECT
 if ($firstName != "" && $role != "") {
     // if ($username == "jack" && $password == "jack13") {
         if (1==1) {
@@ -36,6 +46,8 @@ if ($firstName != "" && $role != "") {
         $_SESSION['lastName'] = $lastName;
         $_SESSION['role'] = $role;
         // if ($_SESSION['role'] ="ceo") {exit;}
+
+        // we set emailType depending on the returned session role.
         if ($_SESSION['role'] =="admin") {$_SESSION['emailType'] ="newAccount";
             header("location: problem.php");
         }
@@ -83,8 +95,8 @@ if ($firstName != "" && $role != "") {
                         <option value="other">other</option>
                     </select>
 
-                    <input type="text" name="firstName" placeholder="First Name" value ="tuna" required>
-                    <input type="text" name="lastName" placeholder="Last Name" value=2 required>
+                    <input type="text" name="firstName" placeholder="First Name" value ="tuna" required style="width:170px;">
+                    <input type="text" name="lastName" placeholder="Last Name" value="fish" required style="width:170px;">
 
                     <select name="role" required>
                         <option value="admin" selected>Admin</option>    

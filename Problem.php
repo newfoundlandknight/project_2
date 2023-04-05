@@ -1,5 +1,12 @@
 <?php
-require 'header.php';?>
+require 'header.php';
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
+// echo '<pre>';
+// var_dump($_POST);
+// echo '</pre>';
+?>
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -16,7 +23,7 @@ require 'header.php';?>
             <?php
                 echo "<h2> Welcome ". $_SESSION['title'] ." ". $_SESSION['firstName']." ". $_SESSION['lastName'] ." (". $_SESSION['role'] .")</h2>";
 
-                 if ($_SESSION['role'] =="admin") {echo "<a href='New-account.php'>New account</a><br><a href='isnt-working.php'>isnt-working</a>   ";
+                 if ($_SESSION['role'] =="admin") {echo "<a href='New-account.php'>New account</a><br><a href='code.php'>code</a><a href='isnt-working.php'>isnt-working</a>   ";
                 }
         
                 if ($_SESSION['role'] =="manager") {echo "<a href='lost-password.php'>Lost password</a><br><a href='isnt-working.php'>isnt-working</a>   ";

@@ -19,9 +19,9 @@ select {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    color: rgb(38, 170, 82);
+    color: rgb(0, 0, 0);
 }
-fselect {
+.fselect {
     cursor: pointer;
     display: inline-block;
     position: relative;
@@ -30,21 +30,25 @@ fselect {
     border: 1px solid #ccc;
   }
 
-input[type=text], input[type=password] {
-    width:200px;
-    padding: 4px 8px;
+input[type=text], input[type=password] ,textarea{
+    width:98%;
+    padding: 4px 4px;
     margin: 2px 0;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    color: rgb(38, 170, 82);
+    color: rgb(0, 0, 0);
 }
 
 label {
-    padding-top: 15px;
+    padding-top: 5px;
+    width: 130px;
+    
+    display: inline-block;
+            
 }
-
+/* label:after { content: ": " } */
 div {
     border-radius: 5px;
     padding: 20px;
@@ -55,9 +59,10 @@ pre {
 }
 .form_100 {
     margin: auto;
-    width:50%;
+    width:80%;
 
 }
+
 .form {
     width:100%;
     padding: 4px 8px;
@@ -66,8 +71,20 @@ pre {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    background-color: aquamarine;
+    background-color: rgb(255, 255, 255);
 }
+.boom {
+    max-width: 100%;
+    vertical-align: middle;
+    display: inline-block;
+    height: auto;
+    margin: auto;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+  }
 .bottom {
     position: fixed;
     left: 0;
@@ -76,6 +93,7 @@ pre {
     background-color: #3e739d;
     color: white;
     text-align: center;
+    box-shadow:  0px -10px 11px   #000;
 
 }
 header {

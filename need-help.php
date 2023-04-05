@@ -13,9 +13,7 @@ require 'header.php';
 <body>
 <?php include 'menu-bar.php';?>
 <div class="form_100">
-        <div class="form">      
-
-CEO   phone (709)690-help<br><br>
+        <div class="form"><h2>We cannot seem to help right now.</h2> Please contact <b>(709)690-help</b> for assistance.<br><br>
 
     
 </div>

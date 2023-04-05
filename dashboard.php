@@ -13,14 +13,16 @@ require 'header.php';
 
     <body>
     <?php include 'menu-bar.php';?>
-
+    <div class="form_100">
+        <div class="form">
 
 
                 <!--if session exists, add logout-->
                 <?php if (isset($_SESSION["firstName"])) : ?>
                     <p class="title">Thank you <?php echo $_SESSION['title'] . " " . $_SESSION['firstName']; ?>, for subscribing.</p>
                 <?php endif;                 ?>
-
+        </div>
+    </div>
         <?php
 require 'footer.php';
 ?>

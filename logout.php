@@ -1,8 +1,28 @@
 <?php
 require 'header.php';
+// error_reporting(0);
+
+if (isset($_SESSION['kill'])){
+
+    $_SESSION = [];
+    // $ses_params = session_get_cookie_params();
+    
+    // $options = array(
+    //     'lifetime' => time()-60
+    //     // 'path'     => $ses_params['path'],
+    //     // 'domain'   => $ses_params['domain'],
+    //     // 'samesite' => $ses_params['samesite']
+    // );
+    
+    // setcookie(session_name(), '', $options);
+    
 
 
-
+    session_unset();
+    session_destroy();
+    header("Location: index.php");
+    exit;
+    } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,25 +47,6 @@ require 'header.php';
 <?php 
 
 // sleep(10);
-if (isset($_SESSION['kill'])){
 
-$_SESSION = [];
-$ses_params = session_get_cookie_params();
-
-$options = array(
-    'lifetime' => time()-60,
-    'path'     => $ses_params['path'],
-    'domain'   => $ses_params['domain'],
-    'secure'   => $ses_params['secure'],
-    'httponly' => $ses_params['httponly'],
-    'samesite' => $ses_params['samesite']);
-
-setcookie(session_name(), '', $options);
-
-
-echo "logged out";
-session_destroy();
-header("Location: index.php");
-} 
 $_SESSION['kill']="kill";
 ?>

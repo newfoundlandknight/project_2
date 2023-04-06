@@ -1,11 +1,6 @@
 <?php
 require 'header.php';
-// echo '<pre>';
-// var_dump($_SESSION);
-// echo '</pre>';
-// echo '<pre>';
-// //var_dump($_POST);
-// echo '</pre>';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,7 +62,9 @@ if (isset($_POST['email'])){ $email = $_POST['email'];}
           <label for="emailMessage">Message:</label><br>
           <textarea name="emailMessage" rows="10" ><?php echo $_SESSION['role'] . " " . $_SESSION['emailType'];
            if (isset($_SESSION['form_data'])){ var_dump($_SESSION['form_data']);} 
-          ?></textarea>  <br>
+           
+var_dump($_SESSION);
+?></textarea>  <br>
           <input type="submit" value="Submit">
 
               

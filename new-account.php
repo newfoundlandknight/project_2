@@ -6,19 +6,19 @@ require 'header.php';
 //var_dump($_REQUEST); // Does not contain elements 'foo' or 'bar'
 
 if (isset($_POST['submit'])) {
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
-echo '<pre>';
-var_dump($_POST);
-echo '</pre>';
+// echo '<pre>';
+// var_dump($_SESSION);
+// echo '</pre>';
+// echo '<pre>';
+// var_dump($_POST);
+// echo '</pre>';
  //exit;
     # process the $_POST data
     if (1==1) {
        
         $_SESSION['form_data'] = $_POST;
         
-         header ("Location: Send-email.php"); // this is the start of the problem
+         header ("Location: send-email.php"); // this is the start of the problem
          exit;
     }
 }

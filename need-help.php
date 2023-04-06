@@ -1,5 +1,11 @@
 <?php
 require 'header.php';
+// echo '<pre>session';
+// var_dump($_SESSION);
+// echo '</pre>';
+// echo '<pre>post-';
+// var_dump($_POST);
+// echo '</pre>';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,10 +19,17 @@ require 'header.php';
 <body>
 <?php include 'menu-bar.php';?>
 <div class="form_100">
-        <div class="form"><h2>We cannot seem to help right now.</h2> Please contact <b>(709)690-help</b> for assistance.<br><br>
+        <div class="form1">
+        <?php
+echo '<pre>session - ';
+var_dump($_SESSION);
+echo '</pre>';
+echo '<pre>post -';
+var_dump($_POST);
+echo '</pre>';
+        ?>
 
-    
-</div>
+        </div>
 </div>
 
 <?php

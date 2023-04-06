@@ -1,9 +1,9 @@
 <?php
 require 'header.php';
-// echo '<pre>';
+// echo '<pre>SESSION - ';
 // var_dump($_SESSION);
 // echo '</pre>';
-// echo '<pre>';
+// echo '<pre>POST - ';
 // var_dump($_POST);
 // echo '</pre>';
 ?>
@@ -23,13 +23,13 @@ require 'header.php';
             <?php
                 echo "<h2> Welcome ". $_SESSION['title'] ." ". $_SESSION['firstName']." ". $_SESSION['lastName'] ." (". $_SESSION['role'] .")</h2>";
 
-                 if ($_SESSION['role'] =="admin") {echo "<a href='New-account.php'>New account</a><br><a href='code.php'>code</a><a href='isnt-working.php'>isnt-working</a>   ";
+                 if ($_SESSION['role'] =="admin") {echo "<a href='new-account.php'>New account</a><br><a href='isnt-working.php'>isnt-working</a>   ";
                 }
         
                 if ($_SESSION['role'] =="manager") {echo "<a href='lost-password.php'>Lost password</a><br><a href='isnt-working.php'>isnt-working</a>   ";
                 }
         
-                if ($_SESSION['role'] =="ceo") {echo "<a href='Need-help.php'>Need Help</a><br><a href='isnt-working.php'>isnt-working</a>   ";
+                if ($_SESSION['role'] =="ceo") {echo "<a href='need-help.php'>Need Help</a><br><a href='isnt-working.php'>isnt-working</a>   ";
                 }
 
 

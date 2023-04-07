@@ -59,6 +59,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["lastName_DB"] = $lastName;
                             $_SESSION["firstName_DB"]= $firstName;
                             $_SESSION["email_DB"]= $email;
+                            // ************************************
+                            if(!empty($_POST["remember"])) {
+                                setcookie ("username",$username,time()+ 3600, "/");
+                                setcookie ("password",$hashed_password,time()+ 3600, "/");
+                                //echo "Cookies Set Successfuly";
+                                //exit;
+                            } else {
+                                setcookie("username","");
+                                setcookie("password","");
+                                //echo "Cookies Not Set";
+                               // exit;
+                            }
+// ***************************************
                             // Redirect user to welcome page
                             header("location: ../index2.php");
                         } else{
@@ -80,6 +93,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     mysqli_close($link);
 }
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -113,7 +131,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="testing">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
-            <div class="form-group">
+            <div class="form-group"><p><input type="checkbox" name="remember" /> Remember me	</p>
                 <input type="submit" class="btn btn-primary" value="Login">
             </div>
             <p>Don't have an account? <a href="register.php">Sign up now</a>.</p>

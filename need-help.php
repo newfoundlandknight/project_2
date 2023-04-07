@@ -19,15 +19,9 @@ require 'header.php';
 <body>
 <?php include 'menu-bar.php';?>
 <div class="form_100">
-        <div class="form1">
-        <?php
-echo '<pre>session - ';
-var_dump($_SESSION);
-echo '</pre>';
-echo '<pre>post -';
-var_dump($_POST);
-echo '</pre>';
-        ?>
+        <div class="form">
+                <h2>Seems everythin else has failed.</h2>
+I guess call the boss at 555-1280
 
         </div>
 </div>

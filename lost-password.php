@@ -1,5 +1,8 @@
 <?php
-require 'header.php';?>
+require 'header.php';
+$_SESSION['form_data'] =" ";
+
+?>
   <!DOCTYPE html>
   <html lang="en">
   <head>

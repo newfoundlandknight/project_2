@@ -25,6 +25,20 @@ if (isset($_POST['submit'])) {
 if (isset($_POST['submit'])) {
    // echo $_SESSION["loggedin"];
 }
+// DB based
+// $_SESSION["loggedin"] = true;
+// $_SESSION["id_DB"] = $id;
+// $_SESSION["username_DB"] = $username;
+// $_SESSION["lastName_DB"] = $lastName;
+// $_SESSION["firstName_DB"]= $firstName;
+// $_SESSION["email_DB"]= $email;
+// index2 based 
+
+$title = $_SESSION['title']  ;
+$firstName = $_SESSION['firstName'];
+$lastName = $_SESSION['lastName'] ;
+$role = $_SESSION['role'] ;
+
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -44,10 +58,10 @@ if (isset($_POST['submit'])) {
       <p>Please fill in this form to create an account.</p>
       <hr>
       <label for="firstName" style="width:160px"><b>First name</b></label>
-      <input type="text" placeholder="First name" name="firstName" required ><br>      
+      <input type="text" placeholder="First name" name="firstName" required value="<?php echo $firstName;?>"><br>      
       
       <label for="lastName"  style="width:160px"><b>Last name</b></label>
-      <input type="text" placeholder="Last name" name="lastName" required ><br>
+      <input type="text" placeholder="Last name" name="lastName" required value="<?php echo $lastName;?>" ><br>
       
       <label for="email" style="width:160px"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required ><br>

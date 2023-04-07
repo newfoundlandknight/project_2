@@ -51,7 +51,7 @@ label {
 /* label:after { content: ": " } */
 div {
     border-radius: 5px;
-    padding: 20px;
+    padding: 0px;
 }
 
 pre {
@@ -59,6 +59,7 @@ pre {
 }
 .form_100 {
     margin: auto;
+    max-width: 650px;
     width:80%;
 
 }
@@ -132,7 +133,7 @@ left:0!important;
 nav.menu {
     top:50px;
     width: 170px;
-    min-height: calc(50vh - 121px);
+    min-height: calc(50vh - 400px);
     background-color: #3e739d;
     position: absolute;
     left: -300px;
@@ -179,3 +180,11 @@ nav.menu > a:hover {
     background-color: #04AA6D;
     color: white;
   }
+  .username {
+color:white;
+font-size: 12px;;
+  }
+
+
+  /* FOOTER *********************************************** */
+ 

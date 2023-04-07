@@ -1,11 +1,17 @@
 <?php
 require 'header.php';
+if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true 
+) {
+    header("location: index.php");
+    exit;
+}
 // echo '<pre>SESSION - ';
 // var_dump($_SESSION);
 // echo '</pre>';
 // echo '<pre>POST - ';
 // var_dump($_POST);
 // echo '</pre>';
+//var_dump($_SESSION);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -21,7 +27,7 @@ require 'header.php';
     <div class="form_100">
         <div class="form">
             <?php
-                echo "<h2> Welcome ". $_SESSION['title'] ." ". $_SESSION['firstName']." ". $_SESSION['lastName'] ." (". $_SESSION['role'] .")</h2>";
+                echo "<h2> Welcome ". $_SESSION['title'] ." ". $_SESSION['firstName']." ". $_SESSION['lastName'] ." (". $_SESSION['role'] .") AKA ". $_SESSION['firstName_DB'] ." ". $_SESSION['lastName_DB'] . "</h2><br>";
 
                  if ($_SESSION['role'] =="admin") {echo "<a href='new-account.php'>New account</a><br><a href='isnt-working.php'>isnt-working</a>   ";
                 }
@@ -32,7 +38,7 @@ require 'header.php';
                 if ($_SESSION['role'] =="ceo") {echo "<a href='need-help.php'>Need Help</a><br><a href='isnt-working.php'>isnt-working</a>   ";
                 }
 
-
+                //var_dump($_SESSION);
 
             ?>
         </div>

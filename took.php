@@ -19,7 +19,11 @@
 </head>
 <body>
 <?php include 'menu-bar.php';?>
-    took
+<div class="form_100">
+    <div class="form">
+        empty
+    </div>
+</div>
 
     <?php require 'footer.php'; ?>
 </body>

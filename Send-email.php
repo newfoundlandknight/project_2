@@ -33,12 +33,12 @@ if (  isset($_POST['firstName']) && isset($_POST['lastName']) ) {
         $lastName = $_POST['lastName'];
         // $role = $_POST['role'];
        if (isset($_POST['psw'])){ $psw = $_POST['psw'];$psw= password_hash($psw, PASSWORD_DEFAULT);} 
-       if (isset($_POST['email'])){ $email = $_POST['email'];} 
+       if (isset($_POST['email'])){ $email =$_POST['email'];} 
       //  
 // $result = send_mail($email, $firstName, $lastName, $psw);
     }
 }
-if (isset($_POST['email'])){ $email = $_POST['email'];} 
+if (isset($_POST['email'])){ $email =  $_POST['email'];} 
     
           
           if (isset($_SESSION["role"])) : 
@@ -55,16 +55,23 @@ if (isset($_POST['email'])){ $email = $_POST['email'];}
             if (isset($_SESSION['form_data']['email'])){ $email = $_SESSION['form_data']['email'];} 
             //complete hack
           ?>
+          <label for="from">From:</label><br>
+          <input type="text" id="from" name="from" value="<?php echo $email?>">
           <label for="fname">To:</label><br>
-          <input type="text" id="fname" name="fname" value="??<?php echo $email?>??"    >
+          <input type="text" id="fname" name="fname" value="<?php if($_SESSION['emailType'] =="lostPassword"){echo "psw_recovrey@hck.ca";}  if($_SESSION['emailType'] =="newAccount"){echo "register@hck.ca";}?>">
+          
+          <!-- value="psw_recovrey@hck.ca"> -->
           <label for="lname">Subject:</label><br>
-          <input type="text" id="lname" name="lname" value="<?php echo $_SESSION['emailType']?>"><br><br>
+          <input type="text" id="lname" name="lname" value="<?php if($_SESSION['emailType'] =="lostPassword"){echo "Lost Password";}  if($_SESSION['emailType'] =="newAccount"){echo "New Account";}?>"><br><br>
           <label for="emailMessage">Message:</label><br>
-          <textarea name="emailMessage" rows="10" ><?php 
-           if (isset($_SESSION['form_data'])){ echo   "******" .var_dump($_POST) ."********** form_data " . var_dump($_SESSION['form_data']);} 
-           
-           echo "**************** " . var_dump($_SESSION);
-?></textarea>  <br>
+          <textarea name="emailMessage" rows="10" >
+          <?php 
+            if (isset($_SESSION['form_data']))
+            { echo   "****** post **" .print_r($_POST) ."********** form_data " . print_r($_SESSION['form_data']);}   
+
+           echo "**************** " . print_r($_SESSION);
+           ?>
+           </textarea>  <br>
           <input type="submit" value="Submit">
 
               

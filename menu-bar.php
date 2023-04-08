@@ -15,8 +15,8 @@
                 <a href="problem.php">Problem</a>
                 <a href="logout.php">Logout</a>           
                  *************** -->
-                 
-                <a href="took.php">took</a>   
+                <a href="admin.php">Admin</a>   
+                <a href="took.php">Empty</a>   
                 <a href="/db/logout.php">DB_LOGOUT</a>
                 
                 </nav>    

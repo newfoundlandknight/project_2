@@ -14,29 +14,20 @@ $_SESSION['form_data'] =" ";
   </head>
   <body>
   <?php include 'menu-bar.php';?>
-  <div id ="main" class="form_100">
+<div id ="main" class="form_100">
   <form class="form" action="send-email.php" method ="post">
     
       <h1>Password Recovery</h1>
       <p>Please fill in this form to reset password</p>
       <hr>
-
-      
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required><br>
-
-
-
-
-      
-<button type="submit" class="signup">Send</button>
+      <button type="submit" class="signup">Send</button>
 
   </form>
 </div>
             
-    <?php
-require 'footer.php';
-?>
+    <?php require 'footer.php';?>
   </body>
   </html> 
 

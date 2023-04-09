@@ -1,7 +1,7 @@
 <?php
  session_start();
 // echo '<pre>';
-// var_dump($_SESSION);
+ //var_dump($_SESSION);
 // echo '</pre>';
 // echo '<pre>';
 // var_dump($_POST);
@@ -12,7 +12,8 @@
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
  && isset($_SESSION["run"]) && $_SESSION["run"] === true
 ) {
-    header("location: need-help.php");
+    echo "loggedin and run";
+   header("location: problem.php");
     exit;
 }
 // if no session than create one

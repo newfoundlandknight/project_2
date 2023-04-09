@@ -1,10 +1,16 @@
 <?php
+// if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
+//     session_destroy();
+//     //exit;
+// }
 // Initialize the session
 session_start();
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: ../index2.php");
-    exit;
+    session_destroy();
+    header("location: login.php");
+    echo "logged in";
+   // exit;
 }
 // Include config file
 require_once "config.php";
@@ -73,6 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             }
 // ***************************************
                             // Redirect user to welcome page
+                            // var_dump($_SESSION); exit;
                             header("location: ../index2.php");
                         } else{
                             // Password is not valid, display a generic error message
@@ -105,7 +112,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     <meta charset="UTF-8">
     <title>Login</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../style.css"> -->
     <style>
         body{ font: 14px sans-serif; }
         .wrapper{ width: 360px; padding: 20px; }
@@ -128,7 +135,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="testing">
+                <input type="password" name="password" autocomplete="on" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="testing">
                 <span class="invalid-feedback"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group"><p><input type="checkbox" name="remember" /> Remember me	</p>

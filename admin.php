@@ -1,11 +1,18 @@
 <?php
- session_start();
+ //session_start();
 // echo '<pre>';
 // var_dump($_SESSION);
 // echo '</pre>';
 // echo '<pre>';
 // var_dump($_POST);
 // echo '</pre>';
+// if ( !isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true 
+// ) {
+//     header("location: db/login.php");
+//     exit;
+// } 
+require 'header.php';
+
 require 'db/config.php';
 
 
@@ -32,11 +39,18 @@ if ($link->connect_error) {
     <title>Document</title>
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
     <script>
+// setTimeout(function(){
+//    window.location.reload();
+// }, 61001);
+// setTimeout(function(){
+//    alert("Hello! I am an alert box!!10 secs ");
+// }, 50000);
+
         function showUser(str) {
-        if (str == "") {
+        if (str == "") { // if str is nothing throw nothing
             document.getElementById("txtHint").innerHTML = "";
             return;
-        } else {
+        } else { // otherwise we are gonna fetch something
             var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {

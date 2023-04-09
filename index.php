@@ -14,6 +14,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true
     exit;
 }
 else {
+    session_destroy();
 header("location: ../db/login.php");
 }
 ?>

@@ -1,6 +1,9 @@
 <!-- NOTHING BUT BOTTOM GOES HERE !!!!!!
 MAYBE SOME JS OR SUCH ?? -->
-
+<?php 
+session_start();
+var_dump($_SESSION);
+?>
 <style>
 
 </style>

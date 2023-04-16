@@ -66,12 +66,12 @@ if ($link->connect_error) {
 <body>
 <?php include 'menu-bar.php';?>
 <div class="form_100">
-    <div class="form">
-
-    <form >
-<div name="users" >
+    <div class="form admin">
+<h2>Admin Page<h2>
+    <form ><a href="db/reset-password.php">reset password</a>
+<div name="users1" class="users1" >
   <!-- <option value="">Select a person:</option> -->
- Click on the user for more info.
+ <h3>Click on the user for more info. (XMLHttpRequest)</h3>
 
 
         <?php 

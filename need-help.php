@@ -14,7 +14,7 @@ require 'header.php';
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
-        <title>Document</title>
+         <title>Document</title><!-- whatever the page is called  -->
 </head>
 <body>
 <?php include 'menu-bar.php';?>

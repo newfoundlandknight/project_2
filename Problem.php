@@ -1,4 +1,5 @@
 <?php
+error_reporting(E_ALL);
 require 'header.php';
 if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true 
 ) {
@@ -11,7 +12,7 @@ if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true
 // echo '<pre>POST - ';
 // var_dump($_POST);
 // echo '</pre>';
-//var_dump($_SESSION);
+// var_dump($_SESSION);
 ?>
     <!DOCTYPE html>
     <html lang="en">
@@ -19,7 +20,7 @@ if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
+        <title>HCK IT Support</title>
         <link href="css/styles.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
@@ -32,7 +33,7 @@ if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true
             <?php
                 echo "<h2> Welcome ". $_SESSION['title'] ." ". $_SESSION['firstName']." ". $_SESSION['lastName'] ." (". $_SESSION['role'] .") AKA ". $_SESSION['firstName_DB'] ." ". $_SESSION['lastName_DB'] . "</h2><br>";
 
-                 if ($_SESSION['role'] =="admin") {echo "<h2><a href='new-account.php'>New account</a><br><a href='isnt-working.php'>isnt-working</a>  </h2> ";
+                if ($_SESSION['role'] =="admin") {echo "<h2><a href='new-account.php'>New account</a><br><a href='isnt-working.php'>isnt-working</a>  </h2> ";
                 }
         
                 if ($_SESSION['role'] =="manager") {echo "<a href='lost-password.php'>Lost password</a><br><a href='isnt-working.php'>isnt-working</a>   ";
@@ -48,7 +49,7 @@ if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true
 
 <br>
 <br>
-<?php require 'var_dump.php'; ?>
+<?php //require 'var_dump.php'; ?>
         </div>
     </div>
 

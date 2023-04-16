@@ -26,9 +26,7 @@ $emailType="";
 
 // now we check to this if a form has posted data
 if (isset($_POST['title']) && isset($_POST['firstName']) && isset($_POST['lastName']) && isset($_POST['role'])  ) {
-    if (!empty($_POST['title']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['role'])
-    
-    ) 
+    if (!empty($_POST['title']) && !empty($_POST['firstName']) && !empty($_POST['lastName']) && !empty($_POST['role']) ) 
     // now we set the variables from the post
     {
         $title = $_POST["title"];        

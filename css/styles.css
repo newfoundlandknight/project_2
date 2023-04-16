@@ -11,6 +11,13 @@ body {
     background-color: #404040;
 }
 
+
+/* ************************ floater************** */
+
+/* ************************************ */
+
+
+
 select {
 
     width:100px;
@@ -62,7 +69,8 @@ pre {
     margin: auto;
     max-width: 650px;
     width:80%;
-
+    min-height: 1200px;
+height:100%;
 }
 
 .form {
@@ -75,6 +83,12 @@ pre {
     box-sizing: border-box;
     background-color: rgb(255, 255, 255);
 }
+.admin h2{
+  font-size:37px;
+  /* text-align: center;  */
+}
+
+
 .boom {
     max-width: 100%;
     vertical-align: middle;
@@ -191,6 +205,30 @@ font-size: 12px;;
     
       }
 
+
+
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700);
+      .h7{
+        font-size: 9.0em;
+        text-transform: uppercase;
+        font-family: 'Open Sans Pro', sans-serif;
+        background: url(https://24.media.tumblr.com/tumblr_m87dri70zh1qzla33o1_500.gif);
+        background: url(https://i.pinimg.com/originals/93/e2/f1/93e2f16470df49a18b8dc46546cdee57.gif);
+        background-size: cover;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-align: center;
+      }
+
+
+.users1 {
+
+color:blue;}
+
+.users1 > h3 {
+  color:black;
+  font-size: 22px;
+}
 
   /* FOOTER *********************************************** */
  

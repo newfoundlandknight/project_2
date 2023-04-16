@@ -6,13 +6,7 @@ if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true
     header("location: index.php");
     exit;
 }
-// echo '<pre>SESSION - ';
-// var_dump($_SESSION);
-// echo '</pre>';
-// echo '<pre>POST - ';
-// var_dump($_POST);
-// echo '</pre>';
-// var_dump($_SESSION);
+
 ?>
     <!DOCTYPE html>
     <html lang="en">

@@ -9,10 +9,14 @@
         <title>Not working</title>
 </head>
 <body>
-
-
+<?php require 'menu-bar.php';?>
+    <div id ="main" class="form_100">
+        
+            <div class ="form">
 
     <div>material would go here</div>
+    </div>
+</div>   
     <?php require 'footer.php'; ?>
 </body>
 </html>

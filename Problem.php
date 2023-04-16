@@ -1,5 +1,5 @@
 <?php
-error_reporting(E_ALL);
+//error_reporting(E_ALL);
 require 'header.php';
 if ( !isset($_SESSION["run"]) || $_SESSION["run"] !== true 
 ) {
